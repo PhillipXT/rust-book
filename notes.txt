@@ -2,7 +2,30 @@ Rust documentation:
     https://doc.rust-lang.org/book
 
 Rust commands:
-    > rustup update             // Update Rust
-    > rustup self uninstall     // Uninstall Rust
-    > rustup doc                // Local documentation
+    > rustc --version
+    > cargo --version
+
+    > rustup update                 // Update Rust
+    > rustup self uninstall         // Uninstall Rust
+    > rustup doc                    // Local documentation
+
+Cargo commands:
+    > cargo new <project_name>      // cargo new hello_cargo
+
+To convert an existing project to Cargo:
+    - Move all source code files to the /src folder
+    - Create a Cargo.toml file (or use "cargo init" to create one)
+    > cargo init
+
+To build/run a Cargo-based project:
+    > cargo build                   // From the base folder of the project
+    > ./target/debug/hello_cargo    // Run the executable
+
+    This creates the file ./target/debug/<binary_executable>, as well as
+    Cargo.lock in the base folder to keep track of dependencies.
+
+    > cargo run                     // Builds and auto-runs the executable
+    > cargo check                   // Builds but doesn't produce a binary 
+    > cargo build --release         // Compile with optimizations
+                                    // Builds in ./target/release/<binary>
 
