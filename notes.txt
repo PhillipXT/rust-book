@@ -1,0 +1,8 @@
+Rust documentation:
+    https://doc.rust-lang.org/book
+
+Rust commands:
+    > rustup update             // Update Rust
+    > rustup self uninstall     // Uninstall Rust
+    > rustup doc                // Local documentation
+
