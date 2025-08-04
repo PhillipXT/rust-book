@@ -17,14 +17,17 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
 
+        // Use trim() because readline() includes the newline char
         if guess.trim() == "quit" {
             println!("Quitting the game...");
             break;
         }
 
+        // 'expect' will panic and crash if an error is returned
         //let guess: u32 = guess.trim().parse()
         //    .expect("Please enter a number!");
 
+        // Switch from 'expect' to 'match' to ignore invalid input
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
