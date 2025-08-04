@@ -17,6 +17,11 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
 
+        if guess.trim() == "quit" {
+            println!("Quitting the game...");
+            break;
+        }
+
         //let guess: u32 = guess.trim().parse()
         //    .expect("Please enter a number!");
 
