@@ -27,5 +27,24 @@ To build/run a Cargo-based project:
     > cargo run                     // Builds and auto-runs the executable
     > cargo check                   // Builds but doesn't produce a binary 
     > cargo build --release         // Compile with optimizations
-                                    // Builds in ./target/release/<binary>
+
+Dependencies:
+    Explicit dependencies are listed in the Cargo.toml file.  When you add
+    a package, that package may have other dependencies, but those are
+    written into the lock file.
+    
+    When you run "cargo build", it creates Cargo.lock that lists all the
+    dependencies and the versions used.  The lock file ensures the project
+    can be rebuilt exactly the same way every time, and should be checked
+    into source control.
+
+    > cargo update                  // Force an update of the lock file
+
+    Updates will be based on semantic versioning, so dependencies will only
+    be upgraded to compatible versions (i.e. 0.8.5 > 0.8.6, but not 0.9.0)
+
+Documentation:
+    Crates have documentation with usage instructions, and these can be built
+    from the dependencies list and viewed in a browser:
+    > cargo doc --open
 
